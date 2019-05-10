@@ -6,11 +6,15 @@ module.exports = {
     entry: {
         app: './src/index.js'
     },
+    resolve: {
+        alias: {
+            app: '/src/app'
+        }
+    },
     output: {
         filename: 'dev/builder.js'
     },
     plugins: [
-    
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'

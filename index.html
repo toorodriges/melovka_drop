@@ -5,8 +5,19 @@
     <title>Builder App</title>
 </head>
 <body>
-    <script>
+    <input id="inInput" multiple="true" type="file">
+    <button onclick="update(inInput.files)">Отправить</button>
 
+    <div id="content">
+
+    </div>
+
+    <script>
+        function update (files) {
+            if (FileReader && files) {
+                window.builder.update(Array.from(files));
+            }
+        }
     </script>
 </body>
 </html>
